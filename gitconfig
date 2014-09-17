@@ -1,4 +1,5 @@
 [alias]
 	l = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset'
+	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(color:cyan)%(refname:short) %(color:reset)%(contents:subject) %(color:white)%(committername), %(committerdate:relative)' refs/heads refs/remotes
 [color]
 	ui = true
