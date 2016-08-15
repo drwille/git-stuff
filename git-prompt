@@ -21,17 +21,17 @@ function set_git_branch {
     git_status="$(git status 2> /dev/null)"
 
     # Set color based on clean/staged/dirty
-    if [[ ${git_status} =~ "Changed but not updated" ]]; then
+    if [[ ${git_status} =~ Changed\ but\ not\ updated ]]; then
         state="${RED}"
-    elif [[ ${git_status} =~ "Changes not staged for commit" ]]; then
+    elif [[ ${git_status} =~ Changes\ not\ staged\ for\ commit ]]; then
         state="${RED}"
-    elif [[ ${git_status} =~ "Untracked files" ]]; then
+    elif [[ ${git_status} =~ Untracked\ files ]]; then
         state="${RED}"
-    elif [[ ${git_status} =~ "Unmerged paths" ]]; then
+    elif [[ ${git_status} =~ Unmerged\ paths ]]; then
         state="${RED}"
-    elif [[ ${git_status} =~ "Changes to be committed" ]]; then
+    elif [[ ${git_status} =~ Changes\ to\ be\ committed ]]; then
         state="${YELLOW}"
-    elif [[ ${git_status} =~ "working directory clean" ]]; then
+    elif [[ ${git_status} =~ working\ (directory|tree)\ clean ]]; then
         state="${GREEN}"
     else
         state=""
