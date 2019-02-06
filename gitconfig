@@ -3,3 +3,8 @@
 	latest = for-each-ref --sort=-committerdate --format='%(committerdate:short) %(color:cyan)%(refname:short) %(color:reset)%(contents:subject) %(color:white)%(committername), %(committerdate:relative)' refs/heads refs/remotes
 [color]
 	ui = true
+[credential]
+	; Modern git
+	helper = /usr/libexec/git-core/git-credential-libsecret
+	; Git on CentOS 7 (yum install git-gnome-keyring)
+	; helper = /usr/libexec/git-core/git-credential-gnome-keyring
